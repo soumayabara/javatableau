@@ -1,0 +1,263 @@
+<!-- <!DOCTYPE html>
+<html>
+<head
+	<meta charset="utf-8">
+	<title>tableau</title>
+	<link rel="stylesheet" type="text/css" href="tab css.css">
+</head>
+<body>
+	<script type="text/javascript">
+	class person{
+		constructor(nom, prénom, date de naissance, lieu de naissance, numéro de télephone, adresse){
+			this.nom=nom;
+			this.prénom=prénom;
+			this.date de naissance=date de naissance;
+			this.lieu de naissance=lieu de naissance;
+			this.numéro de télephone=numéro de télephone;
+			this.adresse=adresse;
+
+		}
+	}
+	function addrow(){
+		var row = "<tr>";
+		var person = new person(
+				document.getElementById('').value,
+				document.getElementById('').value,
+				document.getElementById('').value,
+				document.getElementById('').value,
+				document.getElementById('').value,
+				document.getElementById('').value,
+		)
+	}
+
+	</script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>class-javascript</title>
+	<style type="text/css">
+		body{
+			background: linear-gradient(0.25turn,#B53471,#B53471,#B53471);
+		}
+		td{
+			
+			padding:20px 40px 10px 2px;
+		}
+		#div_form{
+			width: 800px;
+			height:300px;
+			margin: 12% 26% 8% 24%;
+			padding: 2% 3% 1% 3%;
+			border-radius: 50px;
+			border-style: solid;
+			border-color: white;
+			background-color: white;
+			
+		}
+		input[type=text]{
+			background-color: white;
+			border: none;
+			border-bottom: 1px solid black;
+		}
+		#btn{
+			width: 80%;
+			height: 35px;
+			color: white;
+			border-radius: 10px;
+			border-style: none;
+			background-color: #B53471;
+		}
+	</style>
+	<script type="text/javascript">
+		class Person{
+	    	constructor(name, lastName, birthday, birthplace, phone, adress){
+		        this.name = name;
+		        this.lastName = lastName;
+		        this.birthday = birthday;
+		        this.birthplace = birthplace;
+		        this.phone = phone;
+		        this.adress = adress;
+		    }
+		}
+
+		function addRow(){
+			var name = document.getElementById("name").value;
+	        var lastName = document.getElementById("lastName").value;
+	        var birthday = document.getElementById("birthday").value;
+	        var birthplace = document.getElementById("birthplace").value;
+	        var phone = document.getElementById("phone").value;        
+	        var adress = document.getElementById("adress").value;
+	        var test = 0;
+	        // #####name####
+		    if ( name=="") {
+		    	document.getElementById("l_name").style.color="red";
+		    	var test = 0;
+		    }
+		    else{
+		    	document.getElementById("l_name").style.color="black";
+		    	var test = test+1;
+		    	document.getElementById("name").value="";
+		    }
+
+		    // ####lastName####
+		    if ( lastName=="") {
+		    	document.getElementById("l_lastName").style.color="red";
+		    	var test = 0;
+		    }
+		    else{
+		    	document.getElementById("l_lastName").style.color="black";
+		    	var test = test+1;
+		    	document.getElementById("lastName").value="";
+		    }
+
+		    // ####birthday####
+		    if ( birthday=="") {
+		    	document.getElementById("l_birthday").style.color="red";
+		    	var test = 0;
+		    }
+		    else{
+		    	document.getElementById("l_birthday").style.color="black";
+		    	var test = test+1;
+		    	document.getElementById("birthday").value="";
+		    }
+
+		    // ####birthday####
+		    if ( birthplace=="") {
+		    	document.getElementById("l_birthplace").style.color="red";
+		    	var test = 0;
+		    }
+		    else{
+		    	document.getElementById("l_birthplace").style.color="black";
+		    	var test = test+1;
+		    	document.getElementById("birthplace").value="";
+		    }
+
+		    // ####phone####
+		    if ( phone=="") {
+		    	document.getElementById("l_phone").style.color="red";
+		    	var test = 0;
+			}
+		    else{
+		    	document.getElementById("l_phone").style.color="black";
+		    	var test = test+1;
+		    	document.getElementById("phone").value=""; 
+
+		    	
+		    }
+
+		    // ####adress####
+		    if ( adress=="") {
+		    	document.getElementById("l_adress").style.color="red";
+		    	var test = 0;
+		    }
+		    else{
+		    	document.getElementById("l_adress").style.color="black";
+		    	var test = test+1;
+		    	document.getElementById("adress").value="";
+		    }
+
+
+		    if ( test==6) {
+		    	let row = "<tr>";
+			    let person = new Person(
+			        
+			        name,
+					lastName,
+					birthday,
+					birthplace,
+					phone,
+					adress,
+			    )
+			    row += "<td>"+person.name+"</td>";
+			    row += "<td>"+person.lastName+"</td>";
+			    row += "<td>"+person.birthday+"</td>";
+			    row += "<td>"+person.birthplace+"</td>";
+			    row += "<td>"+person.phone+"</td>";
+			    row += "<td>"+person.adress+"</td>";
+			    row += "</tr>";
+			    document.getElementById("tabl2").innerHTML += row;
+		    }
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<div id="div_form">
+			<center>
+				<form name="form_1" id="form_1"style="border-color: white">
+					<table >
+						<tr>
+							<td>
+								<label id="l_name">Nom :</label>
+							</td>
+							<td>
+								<input type="text" id="name" name="n_nom">
+							</td>
+							<td>
+								<label id="l_lastName" >Prénom :</label>
+							</td>
+							<td>
+								<input type="text" id="lastName" name="n_prenom">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label id="l_birthday">Date de naissance:</label>
+							</td>
+							<td>
+								<input type="text" id="birthday" name="n_date">
+							</td>
+							<td>
+								<label id="l_birthplace">Lieu de naissance :</label>
+							</td>
+							<td>
+								<input type="text" id="birthplace" name="n_lieu">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label id="l_phone">Numéro de téléphone:</label>
+							</td>
+							<td>
+								<input type="text" id="phone" name="n_numero">
+							</td>
+							<td>
+								<label id="l_adress">Adresse:</label>
+							</td>
+							<td>
+								<input type="text" id="adress" name="n_addresse">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4">
+								<center>
+									<input type="button" id="btn" value="Ajouter" onclick="addRow() "style="width: 40%;">
+								</center>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</center>
+		</div>
+	</section>
+	<section>
+		<div id="div_tabl">
+			<center>
+				<table border="2px" id="tabl2" style="border-collapse: collapse;border-color: #B53471; background-color: white;">
+					<tr>
+						<td>Nom</td>
+						<td>Prénom</td>
+						<td>Date de naissance</td>
+						<td>Lieu de naissance</td>
+						<td>Numéro de téléphone</td>
+						<td>Adresse</td>
+
+					</tr>
+				</table>
+			</center>
+		</div>
+	</section>
+</body>
+</html>
